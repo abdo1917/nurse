@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_nursing/features/heart_rate/heart_rate_screen.dart';
+import 'package:personal_nursing/features/heart_rate/heart_rate_details.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -164,7 +164,7 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HeartRateScreen(),
+                  builder: (context) => HeartRateDetails(),
                 ),
               );
 

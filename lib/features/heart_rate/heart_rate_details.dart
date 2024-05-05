@@ -62,7 +62,7 @@ class HeartRateDetails extends StatelessWidget {
                 backgroundColor: Colors.green,
               ),
               child: const Text(
-                'Next',
+                'New Check',
                 style: TextStyle(
                   color: Colors.white,
                 ),
