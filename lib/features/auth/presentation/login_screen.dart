@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:personal_nursing/features/auth/presentation/register_screen.dart';
+import 'package:personal_nursing/features/home.dart';
 
 class LoginScreen extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -12,9 +13,11 @@ class LoginScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              SizedBox(height: size.height * .1,),
               SizedBox(
-                height: size.height* .3,
+                height: size.height * .1,
+              ),
+              SizedBox(
+                height: size.height * .3,
                 child: Image.asset(
                   'assets/images/login.jpg',
                 ),
@@ -68,21 +71,32 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 15,
                       ),
-                      const Row(
+                       Row(
                         children: [
-                          Text(
+                          const Text(
                             'Don’t have an account?',
                             style: TextStyle(
                               fontSize: 16,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
-                          Text(
-                            'Register',
-                            style: TextStyle(
-                                fontSize: 16, color: Colors.blueAccent),
+                          InkWell(
+                            onTap: (){
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => RegisterScreen(),
+                                ),
+                              );
+
+                            },
+                            child: const Text(
+                              'Register',
+                              style: TextStyle(
+                                  fontSize: 16, color: Colors.blueAccent),
+                            ),
                           ),
                         ],
                       ),
@@ -92,7 +106,14 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                         width: size.width * .4,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Home(),
+                              ),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.green,
                           ),

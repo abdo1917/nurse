@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:personal_nursing/features/auth/presentation/login_screen.dart';
+import 'package:personal_nursing/features/home.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -95,19 +97,28 @@ class RegisterScreen extends StatelessWidget {
                       const SizedBox(
                         height: 15,
                       ),
-                      const Row(
+                       Row(
                         children: [
-                          Text(
+                          const Text(
                             'Already have an account',
                             style: TextStyle(
                               fontSize: 16,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           InkWell(
-                            child: Text(
+                            onTap: (){
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginScreen(),
+                                ),
+                              );
+                            },
+
+                            child: const Text(
                               'Login',
                               style: TextStyle(
                                   fontSize: 16, color: Colors.blueAccent),
@@ -121,7 +132,14 @@ class RegisterScreen extends StatelessWidget {
                       SizedBox(
                         width: size.width * .4,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Home(),
+                              ),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.green,
                           ),

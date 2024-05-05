@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_nursing/features/heart_rate/heart_rate_screen.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -158,25 +159,36 @@ class Home extends StatelessWidget {
               ),
             ],
           ),
-          const Center(
-            child: Column(
-              children: [
-                CircleAvatar(
-                  child: ImageIcon(
-                    AssetImage('assets/images/heart-rate.png'),
+          InkWell(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HeartRateScreen(),
+                ),
+              );
+
+            },
+            child: const Center(
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    child: ImageIcon(
+                      AssetImage('assets/images/heart-rate.png'),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'HeartRate',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
+                  SizedBox(
+                    height: 20,
                   ),
-                ),
-              ],
+                  Text(
+                    'HeartRate',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],
