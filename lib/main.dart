@@ -4,11 +4,12 @@ import 'package:get/get.dart';
 import 'package:personal_nursing/features/auth/presentation/login_screen.dart';
 import 'package:personal_nursing/features/blood_pressure/blood_pressure_details.dart';
 import 'package:personal_nursing/features/blood_pressure/blood_pressure_screen.dart';
+import 'package:personal_nursing/features/home.dart';
 
 import 'features/heart_rate/heart_rate_screen.dart';
 
 void main() {
-  runApp(PersonalNurse());
+  runApp(const PersonalNurse());
 }
 
 class PersonalNurse extends StatelessWidget {
@@ -16,9 +17,9 @@ class PersonalNurse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: Home(),
 
     );
   }
