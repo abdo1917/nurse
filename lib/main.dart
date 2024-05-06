@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:personal_nursing/features/auth/presentation/login_screen.dart';
+import 'package:personal_nursing/features/splash/presentation/splash_view.dart';
 
 
 void main() {
@@ -15,7 +16,7 @@ class PersonalNurse extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: SplashView(),
 
     );
   }

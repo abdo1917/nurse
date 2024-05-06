@@ -176,7 +176,7 @@ class Home extends StatelessWidget {
                     ),
                   );
                 },
-                child: Column(
+                child: const Column(
                   children: [
                     CircleAvatar(
                       child: ImageIcon(

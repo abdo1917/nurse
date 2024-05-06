@@ -16,7 +16,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   void initState() {
     // TODO: implement initState
     super.initState();
-    animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 600) );
+    animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 600) );
     fadingAnimation =
         Tween<double>(begin: .2 , end: 1).animate(animationController!)..addListener(()
         {
@@ -32,11 +32,10 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(),
               Opacity(
                 opacity: fadingAnimation?.value,
                child:
-               Text(
+               const Text(
                 'Your Personal Nurse is Here !',
                 textAlign: TextAlign.center,
                 style: TextStyle(
