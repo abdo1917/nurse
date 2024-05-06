@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:personal_nursing/features/on%20Boarding/presentation/widgets/on_boarding_view.dart';
+import 'package:personal_nursing/features/auth/presentation/login_screen.dart';
 import 'package:personal_nursing/features/splash/presentation/widgets/Splash_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -21,7 +21,7 @@ class _SplashViewState extends State<SplashView> {
     Timer(const Duration(seconds: 3),
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
-                (context) => const OnBoardingView()
+                (context) => LoginScreen()
             )
         )
     );
