@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:personal_nursing/features/blood_pressure/blood_pressure_details.dart';
+import 'package:personal_nursing/features/device/new_device_screen.dart';
+import 'package:personal_nursing/features/device/your_device_screen.dart';
 import 'package:personal_nursing/features/heart_rate/heart_rate_details.dart';
+import 'package:personal_nursing/features/reminder/reminder_screen.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -59,6 +63,13 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               InkWell(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const YourdeviceScreen(),
+                    ),
+                  );                },
                 child: Container(
                   width: size.width * .3,
                   height: size.height * .1,
@@ -87,6 +98,14 @@ class Home extends StatelessWidget {
                 width: 4,
               ),
               InkWell(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NewDeviceScreen(),
+                    ),
+                  );
+                },
                 child: Container(
                   width: size.width * .3,
                   height: size.height * .1,
@@ -116,49 +135,69 @@ class Home extends StatelessWidget {
           SizedBox(
             height: size.height * .05,
           ),
-          const Row(
+            Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  CircleAvatar(
-                    child: ImageIcon(
-                      AssetImage('assets/images/virus.png'),
+              InkWell(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BloodPressureDetails(),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Common \n Diseases',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
+                  );
+                },
+                child: const Column(
+                  children: [
+                    CircleAvatar(
+                      child: ImageIcon(
+                        AssetImage('assets/images/virus.png'),
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'blood pressure',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              Column(
-                children: [
-                  CircleAvatar(
-                    child: ImageIcon(
-                      AssetImage('assets/images/clock.png'),
+              InkWell(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReminderScreen(),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Reminder',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
+                  );
+                },
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      child: ImageIcon(
+                        AssetImage('assets/images/clock.png'),
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Reminder',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
-          ),
+                     ),
           InkWell(
             onTap: (){
               Navigator.push(
